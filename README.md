@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Getting Started with react dashboard template
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## RDT 구성
 
-## Available Scripts
+### react, redux, material-ui, react-router   
 
-In the project directory, you can run:
+## RDT 구조
 
-### `npm start`
+┌── src    
+│   ├── config  
+│   │   ├── common.js - title, api_base_url, roles, setting options, paths 설정    
+│   │   ├── dashboard.js - header option, dashboard option 설정  
+│   │   ├── dashboardTheme.js - dashboard theme 설정  
+│   │   ├── routes.js - routes 설정  
+│   │   └── index.js  
+│   ├── api - api 모음   
+│   ├── components - 컴포넌트 모음    
+│   ├── containers - 리덕스 연결 컴포넌트 모음    
+│   ├── guards - login, roles 가드  
+│   ├── helper - library util 모음  
+│   ├── hooks - hook 모음  
+│   ├── layouts - layout 구성  
+│   ├── pages - page 구성  
+│   ├── presets - 초기 설정 모음  
+│   ├── redux - redux 모음  
+│   ├── theme - theme 모음  
+│   ├── utils  
+└── README.md 등  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## RDT 설정 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 기본 설정
+TITLE, API_BASE_URL, ROLES, DEFAULT_SETTING  
+common.js 수정  
 
-### `npm test`
+### 기본 라우팅 path 수정 (dashboard 제외)
+index, error, auth, 등을 설정 할 경우    
+또는  
+새로운 path를 생성할 경우 설정    
+단  
+/dashboard 설정은 NAV_BAR list 수정 참조  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. common.js PATHS 수정  
+2. routes.js 수정 - react-route v6 참조  
 
-### `npm run build`
+### HEADER POPOVER list 수정
+dashboard.js HEADER_OPTIONS 수정  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### NAV_BAR list 수정
+1. common.js PATHS 수정  
+2. dashboard.js DASHBOARD_OPTIONS 수정 - react-route v6 참조  
